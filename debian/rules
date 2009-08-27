@@ -1,0 +1,43 @@
+#!/usr/bin/make -f
+
+clean:
+	dh_testdir
+	dh_testroot
+	rm -f build-stamp
+
+	rm -f bsdiff bspatch
+
+	dh_clean
+
+build: build-stamp
+build-stamp:
+	dh_testdir
+
+	CFLAGS="$(CFLAGS)" gcc -lbz2 -o bsdiff bsdiff.c
+	CFLAGS="$(CFLAGS)" gcc -lbz2 -o bspatch bspatch.c
+
+	touch build-stamp
+
+install: build
+
+binary: binary-arch
+
+binary-arch: install
+	dh_testdir
+	dh_testroot
+	dh_installchangelogs
+	dh_installdocs
+	dh_install
+	dh_installman
+	dh_strip
+	dh_compress
+	dh_fixperms
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary-indep:
+
+.PHONY: clean build install binary binary-arch binary-indep
