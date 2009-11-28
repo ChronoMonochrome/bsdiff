@@ -1,3 +1,13 @@
+bsdiff (4.3-9) unstable; urgency=low
+
+  * New maintainer (Closes: #543933).
+  * debian/control
+    - (Vcs-*): Add Git URLs.
+  * debian/watch
+    - New file.
+
+ -- Jari Aalto <jari.aalto@cante.net>  Sat, 28 Nov 2009 19:28:40 +0000
+
 bsdiff (4.3-8) unstable; urgency=low
 
   * Removing vcs fields.
