@@ -1,9 +1,11 @@
 Source: bsdiff
 Section: utils
 Priority: optional
-Maintainer: Debian QA Group <packages@qa.debian.org>
+Maintainer: Jari Aalto <jari.aalto@cante.net>
 Build-Depends: debhelper (>= 7), libbz2-dev
 Standards-Version: 3.8.3
+Vcs-Browser: http://git.debian.org/?p=collab-maint/bsdiff.git
+Vcs-Git: git://git.debian.org/git/collab-maint/bsdiff.git
 Homepage: http://www.daemonology.net/bsdiff/
 
 Package: bsdiff
