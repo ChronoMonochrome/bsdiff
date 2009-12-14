@@ -1,3 +1,16 @@
+bsdiff (4.3-10) unstable; urgency=low
+
+  * Move to format: 3.0 (quilt).
+  * debian/clean
+    - New file.
+  * debian/rules
+    - (clean): delete. Obsoleted by dh(1).
+    - (dh): New rule.
+    - (bsdiff): New simplified rule; was "build-stamp".
+    - (PHONY): Remove "clean".
+
+ -- Jari Aalto <jari.aalto@cante.net>  Mon, 14 Dec 2009 22:44:34 +0200
+
 bsdiff (4.3-9) unstable; urgency=low
 
   * New maintainer (Closes: #543933).
