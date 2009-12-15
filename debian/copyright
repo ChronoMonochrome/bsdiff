@@ -28,7 +28,8 @@ License: BSD
     POSSIBILITY OF SUCH DAMAGE.
 
 Files: debian/*
-Copyright: (C) 2009 Jari Aalto <jari.aalto@cante.net>,
+Copyright:
+    (C) 2009 Jari Aalto <jari.aalto@cante.net>,
     (C) 2005-2009 Daniel Baumann <daniel@debian.org>
 License: BSD
     Redistribution and use in source and binary forms, with or without
