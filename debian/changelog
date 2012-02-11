@@ -1,3 +1,19 @@
+bsdiff (4.3-11) unstable; urgency=low
+
+  * debian/compat
+    - Update to 9
+  * debian/control
+    - (Build-Depends): Update to debhelper 9, dpkg-dev 1.16.1
+    - (Standards-Version): Update to 3.9.2.
+  * debian/copyright
+    - Update to latest DEP5 format.
+  * debian/rules
+    - Remove unnecessary rules.
+    - Use hardened CFLAGS (release goal).
+      http://wiki.debian.org/ReleaseGoals/SecurityHardeningBuildFlags
+
+ -- Jari Aalto <jari.aalto@cante.net>  Sat, 11 Feb 2012 15:13:18 -0500
+
 bsdiff (4.3-10) unstable; urgency=low
 
   * Move to format: 3.0 (quilt).
