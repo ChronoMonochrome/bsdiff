@@ -11,8 +11,8 @@ get-changelog:
 	lynx -dump $(URL) > $(CHANGELOG)
 
 override_dh_auto_build:
-	gcc $(CFLAGS) $(LDFLAGS) -lbz2 -o bsdiff bsdiff.c
-	gcc $(CFLAGS) $(LDFLAGS) -lbz2 -o bspatch bspatch.c
+	gcc $(CFLAGS) -lbz2 -o bsdiff $(LDFLAGS) bsdiff.c
+	gcc $(CFLAGS) -lbz2 -o bspatch $(LDFLAGS) bspatch.c
 
 override_dh_installchangelogs:
 	dh_installchangelogs $(CHANGELOG)
