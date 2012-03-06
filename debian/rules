@@ -1,6 +1,9 @@
 #!/usr/bin/make -f
 
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
 CFLAGS	+= -Wall -pedantic
+CFLAGS	+= $(shell dpkg-buildflags --get CPPFLAGS)
 LDFLAGS += -Wl,--as-needed
 
 CHANGELOG = debian/upstream.changelog
