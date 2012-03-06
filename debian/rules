@@ -1,12 +1,11 @@
 #!/usr/bin/make -f
 
-include /usr/share/dpkg/buildflags.mk
 CFLAGS	+= -Wall -pedantic
 LDFLAGS += -Wl,--as-needed
 
 override_dh_auto_build:
-	CFLAGS="$(CFLAGS)" gcc -lbz2 -o bsdiff bsdiff.c
-	CFLAGS="$(CFLAGS)" gcc -lbz2 -o bspatch bspatch.c
+	CFLAGS="$(CFLAGS)" LDFLAGS="$(LDFLAGS)" gcc -lbz2 -o bsdiff bsdiff.c
+	CFLAGS="$(CFLAGS)" LDFLAGS="$(LDFLAGS)" gcc -lbz2 -o bspatch bspatch.c
 
 %:
 	dh $@
