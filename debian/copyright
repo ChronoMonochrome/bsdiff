@@ -1,18 +1,17 @@
-Format: http://anonscm.debian.org/viewvc/dep/web/deps/dep5.mdwn?revision=174
-X-Format: http://dep.debian.net/deps/dep5
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0
 Upstream-Name: bsdiff
 Upstream-Contact: Colin Percival <cperciva@daemonology.net>
 Source: http://www.daemonology.net/bsdiff
 
 Files: *
 Copyright:
- 2003-2005 Colin Percival <cperciva@daemonology.net>
+  2003-2005 Colin Percival <cperciva@daemonology.net>
 License: BSD
 
 Files: debian/*
 Copyright:
- 2009-2012 Jari Aalto <jari.aalto@cante.net>,
- 2005-2009 Daniel Baumann <daniel@debian.org>
+  2009-2012 Jari Aalto <jari.aalto@cante.net>,
+  2005-2009 Daniel Baumann <daniel@debian.org>
 License: BSD
 
 License: BSD
