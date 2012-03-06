@@ -3,9 +3,19 @@
 CFLAGS	+= -Wall -pedantic
 LDFLAGS += -Wl,--as-needed
 
+CHANGELOG = debian/upstream.changelog
+URL = http://www.daemonology.net/bsdiff/
+
+# Run manually as needed
+get-changelog:
+	lynx -dump $(URL) > $(CHANGELOG)
+
 override_dh_auto_build:
 	CFLAGS="$(CFLAGS)" LDFLAGS="$(LDFLAGS)" gcc -lbz2 -o bsdiff bsdiff.c
 	CFLAGS="$(CFLAGS)" LDFLAGS="$(LDFLAGS)" gcc -lbz2 -o bspatch bspatch.c
+
+override_dh_installchangelogs:
+	dh_installchangelogs $(CHANGELOG)
 
 %:
 	dh $@
