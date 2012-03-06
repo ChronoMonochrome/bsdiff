@@ -9,9 +9,12 @@ bsdiff (4.3-12) unstable; urgency=low
     - Rename from docs/README.
   * debian/rules
     - Delete buildflags.mk; not needed with debhelper 9.
-    - Migrate to DEB_*_MAINT_APPEND variables.
+    - (get-changelog): New.
+    - (override_dh_installchangelogs): New
+  * debian/upstream.changelog
+    - New file.
 
- -- Jari Aalto <jari.aalto@cante.net>  Tue, 06 Mar 2012 08:06:38 -0500
+ -- Jari Aalto <jari.aalto@cante.net>  Tue, 06 Mar 2012 08:19:05 -0500
 
 bsdiff (4.3-11) unstable; urgency=low
 
