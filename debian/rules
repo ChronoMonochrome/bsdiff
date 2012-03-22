@@ -2,9 +2,9 @@
 
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 
-CFLAGS	+= -Wall -pedantic
-CFLAGS	+= $(shell dpkg-buildflags --get CPPFLAGS)
-LDFLAGS += -Wl,--as-needed
+export DEB_BUILD_MAINT_OPTIONS	= hardening=+all
+export DEB_CFLAGS_MAINT_APPEND	= -Wall -pedantic
+export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
 
 CHANGELOG = debian/upstream.changelog
 URL = http://www.daemonology.net/bsdiff/
@@ -14,8 +14,8 @@ get-changelog:
 	lynx -dump $(URL) > $(CHANGELOG)
 
 override_dh_auto_build:
-	gcc $(CFLAGS) -lbz2 -o bsdiff $(LDFLAGS) bsdiff.c
-	gcc $(CFLAGS) -lbz2 -o bspatch $(LDFLAGS) bspatch.c
+	gcc $(CFLAGS) $(CPPFLAGS) -lbz2 -o bsdiff  $(LDFLAGS) bsdiff.c
+	gcc $(CFLAGS) $(CPPFLAGS) -lbz2 -o bspatch $(LDFLAGS) bspatch.c
 
 override_dh_installchangelogs:
 	dh_installchangelogs $(CHANGELOG)

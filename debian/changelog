@@ -1,3 +1,13 @@
+bsdiff (4.3-13) unstable; urgency=low
+
+  * debian/control
+    - (standards-Version): Update to 3.9.3.1.
+  * debian/rules
+     - Use CPPFLAGS for hardening too.
+     - Use DEB_*_MAINT_* variables.
+
+ -- Jari Aalto <jari.aalto@cante.net>  Thu, 22 Mar 2012 13:10:15 -0400
+
 bsdiff (4.3-12) unstable; urgency=low
 
   * debian/control
