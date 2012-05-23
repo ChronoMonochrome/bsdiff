@@ -1,3 +1,10 @@
+bsdiff (4.3-14) unstable; urgency=low
+
+  * debain/rules: Adjust linker flag order (FTBFS; #673995).
+    Patch thanks to Jean-Louis Dupond <jean-louis@dupond.be>.
+
+ -- Jari Aalto <jari.aalto@cante.net>  Wed, 23 May 2012 12:58:42 +0300
+
 bsdiff (4.3-13) unstable; urgency=low
 
   * debian/control
