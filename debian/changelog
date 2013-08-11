@@ -1,3 +1,14 @@
+bsdiff (4.3-15) unstable; urgency=low
+
+  * debian/control
+    - (Standards-Version): Update to 3.9.4.
+    - (Vcs-*): Update to anonscm.debian.org.
+  * debian/patches
+    - (10): New. Adjust Makefile to not have .ifdef directive.
+      (Closes: #718104).
+
+ -- Jari Aalto <jari.aalto@cante.net>  Sun, 11 Aug 2013 15:40:34 +0300
+
 bsdiff (4.3-14) unstable; urgency=low
 
   * debain/rules: Adjust linker flag order (FTBFS; #673995).
