@@ -1,15 +1,17 @@
-CFLAGS		+=	-O3 -lbz2
+CFLAGS		+=	-O3 
+LDFLAGS		+=	-lbz2
 
 PREFIX		?=	/usr/local
 INSTALL_PROGRAM	?=	${INSTALL} -c -s -m 555
 INSTALL_MAN	?=	${INSTALL} -c -m 444
 
+CC=gcc
+
 all:		bsdiff bspatch
-bsdiff:		bsdiff.c
-bspatch:	bspatch.c
+bsdiff:		
+	$(CC) $(CFLAGS) bsdiff.c $(LDFLAGS) -o bsdiff
+bspatch:
+	$(CC) $(CFLAGS) bspatch.c $(LDFLAGS) -o bspatch
 
 install:
 	${INSTALL_PROGRAM} bsdiff bspatch ${PREFIX}/bin
-.ifndef WITHOUT_MAN
-	${INSTALL_MAN} bsdiff.1 bspatch.1 ${PREFIX}/man/man1
-.endif
