@@ -15,3 +15,6 @@ bspatch:
 
 install:
 	${INSTALL_PROGRAM} bsdiff bspatch ${PREFIX}/bin
+
+clean:
+	rm -f bsdiff bspatch

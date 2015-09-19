@@ -1,4 +1,0 @@
-version=3
-# <Webpage URL> <string match> [Version  [Action]]
-
-http://www.daemonology.net/bsdiff/ bsdiff-(.+)\.tar\.gz
