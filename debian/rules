@@ -1,0 +1,26 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+export DEB_BUILD_MAINT_OPTIONS	= hardening=+all
+export DEB_CFLAGS_MAINT_APPEND	= -Wall -pedantic
+export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
+
+CHANGELOG = debian/upstream.changelog
+URL = http://www.daemonology.net/bsdiff/
+
+# Run manually as needed
+get-changelog:
+	lynx -dump $(URL) > $(CHANGELOG)
+
+override_dh_auto_build:
+	gcc $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) -o bsdiff  bsdiff.c -lbz2
+	gcc $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) -o bspatch bspatch.c -lbz2
+
+override_dh_installchangelogs:
+	dh_installchangelogs $(CHANGELOG)
+
+%:
+	dh $@
+
+# End of file
